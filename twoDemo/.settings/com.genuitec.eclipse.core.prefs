@@ -1,0 +1,4 @@
+#Thu Dec 12 23:18:43 CST 2013
+eclipse.preferences.version=1
+validator.Checked=src/mybatis-3-config.dtd,src/com/pojo/sql/mybatis-3-mapper.dtd
+validator.Unchecked=

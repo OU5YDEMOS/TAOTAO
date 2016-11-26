@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.OrderdetailMapper">
+
+	<resultMap id="BaseResultMap" type="com.pojo.Orderdetail">
+		<association property="ordermainOrdermainid" column="ordermainid" javaType="com.pojo.Ordermain"
+			select="com.dao.OrdermainMapper.selectByPrimaryKey" />
+	</resultMap>
+
+	<select id="findById" resultMap="BaseResultMap" parameterType="long">
+		select * from orderdetail where id=#{id}
+	</select>
+
+	<select id="findByMainId" resultType="com.pojo.Orderdetail"	parameterType="long">
+		select * from orderdetail where ordermainid=#{id}
+	</select>
+	
+	<select id="findByExample" resultType="com.pojo.Orderdetail" parameterType="com.pojo.Orderdetail">
+	   SELECT * FROM Orderdetail WHERE ID = #{id} AND ordermainid = #{ordermainid} AND num = #{num}
+	</select>
+
+	<select id="findByMap" resultType="com.pojo.Orderdetail" parameterType="hashmap" statementType="PREPARED">
+	   SELECT * FROM Orderdetail WHERE ordermainid = #{mainid} AND num = #{num}  AND PRODUCTNAME = #{chinese,jdbcType=VARCHAR} 
+	</select>
+
+
+	<parameterMap type="hashmap" id="tempMap">
+	  <!-- 这里面写不写parameter都是一个样子的 ???-->
+	  <parameter property="mainid" resultMap=""/>
+	  <parameter property="nukfdsfds"/>
+	</parameterMap>
+	
+    <select id="findByParameterMap" resultType="com.pojo.Orderdetail" parameterMap="tempMap">
+	   SELECT * FROM Orderdetail WHERE ordermainid = #{mainid} AND num = #{num} and productname = #{pname}
+	</select>
+</mapper>

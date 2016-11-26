@@ -1,0 +1,4 @@
+#Tue Dec 17 12:53:54 CST 2013
+eclipse.preferences.version=1
+validator.Checked=src/mybatis-3-config.dtd,src/com/dao/mybatis-3-mapper.dtd
+validator.Unchecked=

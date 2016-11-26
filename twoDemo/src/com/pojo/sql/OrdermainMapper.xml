@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.OrdermainMapper">
+
+	<resultMap id="BaseResultMap" type="com.pojo.Ordermain">
+		<collection property="orderdetailsOrdermainid" ofType="com.pojo.Orderdetail"
+			column="ID" select="com.dao.OrderdetailMapper.findByMainId" />
+	</resultMap>
+
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="long">
+		select * from ordermain	where ID=#{id}
+	</select>
+	
+	<insert id="addOrderMain" parameterType="om" useGeneratedKeys="true" keyProperty="id">
+	   INSERT INTO ordermain(custname) VALUES(#{custname,jdbcType=VARCHAR});
+	</insert>
+
+</mapper>
