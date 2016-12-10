@@ -5,6 +5,7 @@
 	<artifactId>taotao-parent</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
+
 	<!-- 集中定义依赖版本号 -->
 	<properties>
 		<junit.version>4.12</junit.version>
@@ -30,7 +31,6 @@
 		<jedis.version>2.7.2</jedis.version>
 		<solrj.version>4.10.3</solrj.version>
 	</properties>
-	<!-- 只定义依赖的版本，并不实际依赖 -->
 	<dependencyManagement>
 		<dependencies>
 			<!-- 时间操作组件 -->
@@ -178,10 +178,8 @@
 		</dependencies>
 	</dependencyManagement>
 
-	<!-- 实际编译工程 -->
 	<build>
 		<finalName>${project.artifactId}</finalName>
-		<!-- 实际加载插件 -->
 		<plugins>
 			<!-- 资源文件拷贝插件 -->
 			<plugin>
@@ -204,7 +202,6 @@
 				</configuration>
 			</plugin>
 		</plugins>
-		<!-- 定义插件 -->
 		<pluginManagement>
 			<plugins>
 				<!-- 配置Tomcat插件 -->

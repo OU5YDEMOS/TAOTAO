@@ -10,7 +10,7 @@
 	<artifactId>taotao-manager</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
-
+	<!-- 依赖管理 -->
 	<dependencies>
 		<dependency>
 			<groupId>com.taotao</groupId>
@@ -33,6 +33,9 @@
 				<configuration>
 					<port>8080</port>
 					<path>/</path>
+					<url>http://192.168.25.135:8080/manager/text</url>
+					<username>tomcat</username>
+					<password>tomcat</password>
 				</configuration>
 			</plugin>
 		</plugins>
